@@ -1,0 +1,8 @@
+README.md
+setup.py
+RobotFrameworkLANotifications/__init__.py
+RobotFrameworkLANotifications.egg-info/PKG-INFO
+RobotFrameworkLANotifications.egg-info/SOURCES.txt
+RobotFrameworkLANotifications.egg-info/dependency_links.txt
+RobotFrameworkLANotifications.egg-info/requires.txt
+RobotFrameworkLANotifications.egg-info/top_level.txt
