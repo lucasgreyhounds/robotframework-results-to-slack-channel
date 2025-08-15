@@ -44,4 +44,10 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ## Contact
 
-The Author of the code is Tim Lolkema (https://pypi.org/project/robotframework-notifications/) and modified by Lucas Greyhounds to add more details such as Environment and Footer custom text. All credits to the author. 
+The Author of the code is Tim Lolkema (https://pypi.org/project/robotframework-notifications/) and modified by Lucas Greyhounds (https://pypi.org/project/robotframework-results-to-slack-channel/) to add more details such as Environment and Footer custom text. All credits to the author. 
+
+## To update pypi package: RobotFrameworkResultsToSlackChannel
+
+1. On setup.py, change the version number. 
+2. python setup.py sdist bdist_wheel
+3. twine upload dist/*

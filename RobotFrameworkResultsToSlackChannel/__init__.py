@@ -81,7 +81,7 @@ class RobotFrameworkResultsToSlackChannel:
             attachments['fields'] = [
                 {
                     "title": "Environment",
-                    "value": self.env +"  :barcs:",
+                    "value": self.env,
                     "short": True
                 }
             ]
@@ -89,7 +89,7 @@ class RobotFrameworkResultsToSlackChannel:
             attachments['fields'] = [
                 {
                     "title": "Environment",
-                    "value": self.env +"  :whiteandcase:",
+                    "value": self.env,
                     "short": True
                 }
             ]
@@ -97,7 +97,7 @@ class RobotFrameworkResultsToSlackChannel:
             attachments['fields'] = [
                 {
                     "title": "Environment",
-                    "value": self.env +"  :netflix:",
+                    "value": self.env,
                     "short": True
                 }
             ]

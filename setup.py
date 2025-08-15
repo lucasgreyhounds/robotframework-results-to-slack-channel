@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="robotframework-results-to-slack-channel",
-    version="1.0.0",
+    version="1.0.1",
     description="Send Robot Framework Results Notifications to specific Slack channel. Forked from tlolkema/RobotNotifications and all credits from the creator tlolkema. Added some details to fit for the organisation by Lucas Greyhounds.",
     long_description=README,
     long_description_content_type="text/markdown",
