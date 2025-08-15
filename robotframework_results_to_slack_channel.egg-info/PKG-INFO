@@ -1,3 +1,22 @@
+Metadata-Version: 2.1
+Name: robotframework-results-to-slack-channel
+Version: 1.0.0
+Summary: Send Robot Framework Results Notifications to specific Slack channel. Forked from tlolkema/RobotNotifications and all credits from the creator tlolkema. Added some details to fit for the organisation by Lucas Greyhounds.
+Home-page: https://github.com/lucasgreyhounds/robotframework-results-to-slack-channel
+Author: Lucas Greyhounds
+Author-email: lucasgreyhounds@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
 # RobotFrameworkResultsToSlackChannel
 
 A utility to send Robot Framework test results directly to a Slack channel.

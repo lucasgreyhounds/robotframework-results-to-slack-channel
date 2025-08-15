@@ -1,23 +1,22 @@
 '''
-POST a message to a Slack or Mattermost channel through Robot Framework.
+POST the reslts as notification to a Slack channel
 Can be used both as a library or listener.
 Modified from https://github.com/tlolkema/RobotNotifications
-Created By Master https://github.com/tlolkema
+Created by https://github.com/tlolkema
 '''
 
+from .main import hello
 import json
-
 import requests
 from requests.exceptions import HTTPError
 from robot.api.deco import keyword
 
-
-class robotframework_la_notifications:
+class RobotFrameworkResultsToSlackChannel:
     '''
-    POST a message to a Slack or Mattermost channel.
+    POST a notification to Slack. 
     '''
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
-    ROBOT_LIBRARY_VERSION = '1.0.0'
+    ROBOT_LIBRARY_VERSION = '0.0.1'
     ROBOT_LISTENER_API_VERSION = 3
 
     def __init__(self, webhook, *args, env, footerText):       
@@ -50,7 +49,7 @@ class robotframework_la_notifications:
         
     @keyword('Post Message To Channel')
     def post_message_to_channel(self, text, **kwargs):
-        '''POST a custom message to a Slack or Mattermost channel.'''
+        '''POST a slack notification message to a Slack'''
         json_data = self._clean_data(text, kwargs)
         headers = {'Content-Type': 'application/json'}
         try:
@@ -102,14 +101,21 @@ class robotframework_la_notifications:
                     "short": True
                 }
             ]
-        
+        else:
+            attachments['fields'] = [
+                {
+                    "title": "Environment",
+                    "value": self.env,
+                    "short": True
+                }
+            ]
 
         attachments['text'] = text
         attachment_list = [attachments]
         return attachment_list
 
     def end_suite(self, data, result):
-        '''Post the suite results to Slack or Mattermost'''        
+        '''Post the suite results to Slack'''        
         
         statistics = self._return_statistics(result.statistics)
         
@@ -137,7 +143,7 @@ class robotframework_la_notifications:
                 self.post_message_to_channel(text, attachments=attachments_data)
 
     def end_test(self, data, result):
-        '''Post individual test results to Slack or Mattermost'''
+        '''Post individual test results to Slack'''
         if result.passed:
             attachment_text = (
                 f'*{result.name}*\n'
